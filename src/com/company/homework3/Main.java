@@ -17,7 +17,7 @@ public class Main {
         System.out.print("\nSorted numbers: \n");
         Arrays.sort(arr);
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + "  ");
+            System.out.print(Math.pow(arr[i], 2) + "  ");
         }
 
     }
