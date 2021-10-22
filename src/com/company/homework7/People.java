@@ -1,21 +1,20 @@
 package com.company.homework7;
 
-public class People extends Participant {
+public class People implements Participant {
 
     @Override
     public void run() {
         peoplerun();
     }
-
     @Override
     public void jump() {
         peoplejump();
     }
     public void peoplerun() {
-        System.out.println("People run....");
+        System.out.println("People run ");
     }
 
     public void peoplejump() {
-        System.out.println("People jump....");
+        System.out.println("People jump ");
     }
 }

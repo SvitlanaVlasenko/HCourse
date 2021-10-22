@@ -1,15 +1,9 @@
 package com.company.homework7;
 
-public abstract class Participant {
+public interface Participant {
 
-    public void print() {
-        System.out.print("Participant ");
-        run();
-        jump();
+    void run();
 
-    }
-
-    public abstract void run();
-    public abstract void jump();
+    void jump();
 }
 

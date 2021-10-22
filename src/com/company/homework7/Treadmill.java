@@ -1,12 +1,16 @@
 package com.company.homework7;
 
-public class Treadmill extends Barrier {
-
+public class Treadmill implements Barrier {
     @Override
-    public void overcome() {
+    public void overcome(Participant participant) {
+        participant.run();
         treadmill();
+
     }
+
     public void treadmill() {
         System.out.print("treadmill");
     }
+
+
 }

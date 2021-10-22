@@ -1,12 +1,9 @@
 package com.company.homework7;
 
-public class Cat extends Participant {
-    public Cat() {
-    }
-
+public class Cat implements Participant {
     @Override
     public void run() {
-        catrun();
+       catrun();
     }
 
     @Override
@@ -15,10 +12,10 @@ public class Cat extends Participant {
     }
 
     public void catrun() {
-        System.out.println("Cat run....");
+        System.out.println("Cat run ");
     }
 
     public void catjump() {
-        System.out.println("Cat jump....");
+        System.out.println("Cat jump ");
     }
 }

@@ -1,16 +1,6 @@
 package com.company.homework7;
 
-public abstract class Barrier extends Participant {
+public interface Barrier {
 
-    @Override
-    public void run() {
-        overcome();
-    }
-
-    @Override
-    public void jump() {
-        overcome();
-    }
-
-    public abstract void overcome();
+    void overcome(Participant participant);
 }
