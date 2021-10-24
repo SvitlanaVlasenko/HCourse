@@ -6,7 +6,6 @@ public class Iterator {
     private int[][] arr;
 
     public Iterator(int[][] arr) {
-        // TODO
         this.arr = arr;
         this.iterator = 0;
     }
