@@ -4,8 +4,9 @@ public class StringActions {
 
     public static void main(String[] args) {
 
-        System.out.println(stringReverse());
         System.out.println(findSymbolOccurance());
+        System.out.println(findWordPosition());
+        System.out.println(stringReverse());
         System.out.println(isPalindrome());
     }
 
@@ -13,17 +14,17 @@ public class StringActions {
         String str = "abs";
         int occurrences = 0;
         for (char chr : str.toCharArray()) {
-             if (chr == '\u0430') {
+            if (chr == '\u0430') {
                 occurrences++;
             }
         }
         return occurrences;
     }
 
-    //public static findWordPosition() {
-    //    String source = "Apollo";
-    //     String target = "pollo";
-    //}
+    public static boolean findWordPosition() {
+        String source = "Apollo";
+        String target = "pollo";
+    }
 
     public static String stringReverse() {
         String strn = "Hello";
