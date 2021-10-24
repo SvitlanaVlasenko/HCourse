@@ -21,9 +21,11 @@ public class StringActions {
         return occurrences;
     }
 
-    public static boolean findWordPosition() {
-        String source = "Apollo";
+    public static int findWordPosition() {
+        String source = "Abpollo";
         String target = "pollo";
+        int isExists = source.indexOf(target);
+        return isExists;
     }
 
     public static String stringReverse() {
