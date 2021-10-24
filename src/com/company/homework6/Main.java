@@ -1,17 +1,22 @@
 package com.company.homework6;
 
-import java.util.Arrays;
-import java.util.stream.IntStream;
-
 public class Main {
     public static void main(String[] args) {
-        Figure[] figures = getFigures();
-        for (int i = 0; i < figures.length; i++) {
-            figures[i].square();
-            double total = Arrays.stream(new double[]{figures[i].square()}).sum();
-            System.out.println(total);
-        }
+        System.out.println(GetFigure());
     }
+
+    public static double GetFigure() {
+        Figure[] figures = getFigures();
+        double total = 0;
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < figures.length; i++) {
+            total += i;
+            stringBuilder.append(figures[i].square());
+        }
+        stringBuilder.append(" = " + total);
+        return total;
+    }
+
 
     static Figure[] getFigures() {
         return new Figure[]{
@@ -19,3 +24,4 @@ public class Main {
         };
     }
 }
+

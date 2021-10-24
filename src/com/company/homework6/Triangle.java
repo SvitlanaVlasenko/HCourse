@@ -8,7 +8,7 @@ public class Triangle implements Figure {
     }
 
     protected double SquareTriangle() {
-        int a = 30;
+        int a = 3;
         double area = a * 3;
         return area;
     }

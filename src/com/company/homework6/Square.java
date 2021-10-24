@@ -8,8 +8,8 @@ public class Square implements Figure {
 
     }
     protected double SquareSquare() {
-        int a = 30;
-        int b = 20;
+        int a = 3;
+        int b = 2;
         double area = (a+b)*2;
         return area;
     }
