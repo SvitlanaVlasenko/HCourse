@@ -9,7 +9,7 @@ public class Treadmill implements Barrier {
     }
 
     public void treadmill() {
-        System.out.print("treadmill");
+        System.out.println("treadmill");
     }
 
 

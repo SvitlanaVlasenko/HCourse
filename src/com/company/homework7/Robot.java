@@ -11,11 +11,11 @@ public class Robot implements Participant {
     }
 
     public void robotrun() {
-        System.out.println("Robot run ");
+        System.out.print("Robot run ");
     }
 
     public void robotjump() {
-        System.out.println("Robot jump ");
+        System.out.print("Robot jump ");
     }
 
 

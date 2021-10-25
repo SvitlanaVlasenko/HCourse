@@ -11,10 +11,10 @@ public class People implements Participant {
         peoplejump();
     }
     public void peoplerun() {
-        System.out.println("People run ");
+        System.out.print("People run ");
     }
 
     public void peoplejump() {
-        System.out.println("People jump ");
+        System.out.print("People jump ");
     }
 }

@@ -8,7 +8,7 @@ public class Wall implements Barrier {
     }
 
     public void wall() {
-        System.out.print("wall");
+        System.out.println("wall");
     }
 
 }

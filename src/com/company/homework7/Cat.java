@@ -12,10 +12,10 @@ public class Cat implements Participant {
     }
 
     public void catrun() {
-        System.out.println("Cat run ");
+        System.out.print("Cat run ");
     }
 
     public void catjump() {
-        System.out.println("Cat jump ");
+        System.out.print("Cat jump ");
     }
 }
