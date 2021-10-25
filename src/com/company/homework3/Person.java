@@ -1,8 +1,12 @@
 package com.company.homework3;
 
 
+import java.util.Objects;
 
 public class Person {
+    public static void main(String[] args){
+        System.out.println(getPersons());
+    }
     /**
      * 1) Создать класс Person у котороего есть 3 поля - фамилия, имя, отчество.
      * Создать 2 конструктора - одни на все поля,
@@ -58,6 +62,19 @@ public class Person {
                 ", secondName='" + secondName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return firstName.equals(person.firstName) && secondName.equals(person.secondName) && lastName.equals(person.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, secondName, lastName);
     }
 }
 
