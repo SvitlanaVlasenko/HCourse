@@ -9,9 +9,9 @@ public class Person {
      * во второй задается строка типа "Иванов Иван Иванович",
      * он ее должен распарсить и задать значения полям.
      */
-    String firstName;
-    String secondName;
-    String lastName;
+    protected String firstName;
+    protected String secondName;
+    protected String lastName;
 
     public Person(String firstName, String secondName, String lastName) {
         this.firstName = firstName;
@@ -49,6 +49,15 @@ public class Person {
         persons.setSecondName("Ivan");
         persons.setLastName("Ivanovich");
         return persons;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }
 
