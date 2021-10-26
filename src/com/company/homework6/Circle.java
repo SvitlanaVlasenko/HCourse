@@ -3,10 +3,10 @@ package com.company.homework6;
 public class Circle implements Figure {
     @Override
     public double square() {
-        return Squarecircle();
+        return squarecircle();
     }
 
-    protected double Squarecircle() {
+    protected double squarecircle() {
         int r = 3;
         double area = Math.PI * r;
         return area;

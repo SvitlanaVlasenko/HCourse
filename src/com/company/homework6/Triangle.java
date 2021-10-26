@@ -3,11 +3,10 @@ package com.company.homework6;
 public class Triangle implements Figure {
     @Override
     public double square() {
-        return SquareTriangle();
-
+        return squareTriangle();
     }
 
-    protected double SquareTriangle() {
+    protected double squareTriangle() {
         int a = 3;
         double area = a * 3;
         return area;

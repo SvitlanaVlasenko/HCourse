@@ -1,5 +1,5 @@
 package com.company.homework6;
-
+import java.util.Scanner;
 
 public class Iterator {
     private int iterator;
@@ -7,10 +7,15 @@ public class Iterator {
 
     public Iterator(int[][] arr) {
         this.arr = arr;
-        this.iterator = 0;
+        this.iterator = -1;
     }
 
-    public Object next() {
+    protected boolean hasNext() {
+        Scanner scanner = new Scanner(String.valueOf(iterator));
+        return true;
+    }
+
+    public int[] next() {
         return arr[iterator++];
     }
 
