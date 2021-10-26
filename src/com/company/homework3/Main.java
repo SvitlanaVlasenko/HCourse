@@ -16,10 +16,8 @@ public class Main {
         System.out.print("\nSorted numbers: \n");
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) Math.pow(arr[i], 2);
-            Arrays.sort(arr);
-            System.out.println(Arrays.toString(new int[]{arr[i]}));
-
         }
-
+            Arrays.sort(arr);
+            System.out.println(Arrays.toString(arr));
     }
 }
