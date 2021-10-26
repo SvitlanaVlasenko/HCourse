@@ -2,7 +2,6 @@ package com.company.homework3;
 
 
 public class Person {
-
     /**
      * 1) Создать класс Person у котороего есть 3 поля - фамилия, имя, отчество.
      * Создать 2 конструктора - одни на все поля,
@@ -19,39 +18,16 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public Person(String persons) {
-        persons = new String("Ivanov Ivan Ivanovich");
-
+    public Person(String allName) {
+        String delimeter = " ";
+        String[] newAllName = allName.split(delimeter);
+        firstName = newAllName[0];
+        secondName = newAllName[1];
+        lastName = newAllName[2];
     }
 
-    public String getFirstName() {
+    public Person() {
 
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-
-        this.firstName = firstName;
-    }
-
-    public String getSecondName() {
-
-        return secondName;
-    }
-
-    public void setSecondName(String secondName) {
-
-        this.secondName = secondName;
-    }
-
-    public String getLastName() {
-
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-
-        this.lastName = lastName;
     }
 
     @Override

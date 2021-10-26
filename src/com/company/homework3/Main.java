@@ -3,7 +3,11 @@ package com.company.homework3;
 import java.util.Arrays;
 
 public class Main {
+
     public static void main(String[] args) {
+        String allName = "Иванов Иван Иванович";
+        System.out.println(new Person(allName));
+        //System.out.println(allName);
 
         /**2) Задан массив случаных чисел типа int в котором есть положительные и отрицательные числа.
 
@@ -13,6 +17,7 @@ public class Main {
             arr[i] = (int) (Math.random() * 30) - 10;
             System.out.print(arr[i] + "  ");
         }
+
         System.out.print("\nSorted numbers: \n");
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) Math.pow(arr[i], 2);
