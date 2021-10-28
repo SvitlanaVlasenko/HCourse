@@ -24,7 +24,6 @@ public class StringActions {
         String stringReverses = scr.nextLine();
         System.out.println(stringReverse(stringReverses));
 
-
         Scanner scrp = new Scanner(System.in);
         System.out.print("Please, enter the string: ");
         String isPalindromes = scrp.nextLine();
@@ -78,5 +77,4 @@ public class StringActions {
         }
         return true;
     }
-
 }
