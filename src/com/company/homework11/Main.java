@@ -18,6 +18,7 @@ public class Main {
         strings.add("dfgh");
         strings.add("dfgh");
         System.out.println(countOccurance(strings, "aaaa"));
+        calcOccurance(strings);
 
         //Ex2
         List<Integer> newList = toList(new int[]{1, 2, 3});
@@ -31,7 +32,7 @@ public class Main {
         someNumbers.add(15);
         someNumbers.add(22);
         someNumbers.add(10);
-        someNumbers.add(20);
+        someNumbers.add(10);
         someNumbers.add(30);
         someNumbers.add(10);
         List<Integer> newResult = findUnique(someNumbers);
@@ -72,9 +73,9 @@ public class Main {
     }
 
     /**
-     * 3. Создать метод findUnique, принимающий на вход числовой список состоящий из произвольных значений,
-     * которые могут повторяться в неограниченном количестве.
-     * Необходимо вернуть новый числовой список содержащий только уникальные числа.
+     3. Создать метод findUnique, принимающий на вход числовой список состоящий из произвольных значений,
+     которые могут повторяться в неограниченном количестве.
+     Необходимо вернуть новый числовой список содержащий только уникальные числа.
      */
     static List<Integer> findUnique(List<Integer> digits) {
         List<Integer> unique = new ArrayList<>();
@@ -84,7 +85,33 @@ public class Main {
                 unique.add(digits.get(i));
             }
         }
-
         return unique;
+    }
+
+    /**
+     * 4. ** Создать метод calcOccurance, принимающий на вход строковый список в качестве параметра.
+     * Список заполнен произвольными словами 10-20 штук, которые могут повторяться в неограниченном количестве.
+     * Вычислить сколько раз встречается каждое слово. Результат вывести в консоль.
+     * Например:
+     * bird: 2
+     * fox: 1
+     * cat: 1
+     */
+    public static void calcOccurance(List<String> stringslist) {
+        List<String> newList = new ArrayList<>();
+        for (int i = 0; i < stringslist.size(); i++) {
+            if (!newList.contains(stringslist.get(i))) {
+                newList.add(stringslist.get(i));
+                int count = 0;
+
+                for (int j = 0; j < stringslist.size(); j++) {
+                    if (stringslist.get(i).equals(stringslist.get(j))) {
+                        count++;
+                        //return stringslist.get(i) + ": " + count;
+                    }
+                }
+                System.out.println(stringslist.get(i) + ": " + count);
+            }
+        }
     }
 }
