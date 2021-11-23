@@ -1,4 +1,4 @@
-package com.company.homework11;
+package com.company.homework11.part1;
 
 import java.util.ArrayList;
 import java.util.List;
