@@ -2,7 +2,7 @@ package com.company.homework15;
 
 public class Apple implements Fruit {
 
-    public Apple(String apple) {
+     public Apple(String apple) {
     }
 
     @Override

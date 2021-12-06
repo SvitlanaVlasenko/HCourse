@@ -40,7 +40,7 @@ public class Box<T extends Fruit> implements Comparable<T> {
 
     public void merge(Box<T> other) {
         fruits.addAll(other.getFruits());
-        other.getFruits().clear();
+        //other.getFruits().clear();
     }
 
     public boolean compare(Box<? extends Fruit> other) {
@@ -52,8 +52,7 @@ public class Box<T extends Fruit> implements Comparable<T> {
         return Float.compare(getWeight(), other.getWeight());
     }
 
-    @Override
-    public String toString() {
+    public String toString(Box<Apple> appleBox) {
         return "Box{" +
                 "fruits=" + fruits +
                 '}';

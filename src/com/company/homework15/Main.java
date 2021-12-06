@@ -1,10 +1,19 @@
 package com.company.homework15;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
+        int[] arrayInt = new int[]{1, 3, 5};
+        List<String> arrayList = new ArrayList(Collections.singleton(arrayInt));
+        List<String> stringList = toList(arrayList);
+        System.out.println(stringList);
+
+
         Box<Apple> appleBox = new Box<>();
         Box<Orange> orangeBox = new Box<>();
         Apple apple = new Apple("apple");
@@ -25,5 +34,9 @@ public class Main {
 
         System.out.println("Compare apple & orange= " + appleBox.compare(orangeBox));
 
+    }
+
+    public static<T> List<T> toList(List<String> arrayList){
+        return (List<T>) Arrays.asList(arrayList);
     }
 }
