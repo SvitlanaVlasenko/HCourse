@@ -35,7 +35,9 @@ public class Main {
         System.out.println("Compare apple & orange= " + appleBox.compare(orangeBox));
 
     }
-
+/**1. Создать метод toList. Метод принимает на вход массив и преобразовывает его в список.
+ * Коллекция хранит точно такой же тип данных, как и входной массив.
+ После преобразования необходимо вернуть только что созданный список.*/
     public static<T> List<T> toList(List<String> arrayList){
         return (List<T>) Arrays.asList(arrayList);
     }
