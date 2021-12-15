@@ -1,0 +1,4 @@
+Dhttps.proxySet=true
+Djdk.https.auth.tunneling.disabledSchemes=""
+Dhttps.proxyHost=127.0.0.1
+Dhttps.proxyPort=443
