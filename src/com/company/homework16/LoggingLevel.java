@@ -8,23 +8,5 @@ package com.company.homework16;
  То есть, если активирован уровень DEBUG, то в него также включается INFO, но не наоборот.*/
 
 public enum LoggingLevel {
-    LEVEL("LEVEL"), INFO("INFO"), DEBUG("DEBUG");
-
-//	private final String m_name;
-//
-//	LoggingLevel(String name) {
-//		m_name = name;
-//	}
-//
-//	public static LoggingLevel stringToLevel(String s) {
-//		LoggingLevel result = LoggingLevel.DEBUG;
-//		for (LoggingLevel l : LoggingLevel.values()) {
-//			if (l.toString().equals(s)) {
-//				result = l;
-//			}
-//		}
-//		return result;
-//	}
-    LoggingLevel(String level) {
-    }
+    INFO, DEBUG;
 }
