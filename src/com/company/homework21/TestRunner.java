@@ -34,13 +34,6 @@ public class TestRunner {
 
         }
     }
-    public void run(String className) {
-        LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request()
-                .selectors(DiscoverySelectors.selectClass(className))
-                .build();
-
-        launchResult(request);
-    }
 
     public void run(String... classNames) {
         for (String className : classNames) {
@@ -68,12 +61,12 @@ public class TestRunner {
             launcher.execute(request);
             TestExecutionSummary summary = listener.getSummary();
             summary.printTo(new PrintWriter(System.out));
-//            try {
-//                PrintWriter printWriter = new PrintWriter(new FileOutputStream("resultTest.txt", true));
-//                summary.printTo(printWriter);
-//            }catch (IOException e){
-//                System.out.println(e.getMessage());
-//            }
+            try {
+                PrintWriter printWriter = new PrintWriter(new FileOutputStream("resultTest.txt", true));
+                summary.printTo(printWriter);
+            }catch (IOException e){
+                System.out.println(e.getMessage());
+            }
         }
 
 
