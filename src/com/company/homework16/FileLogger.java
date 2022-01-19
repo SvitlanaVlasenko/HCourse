@@ -2,33 +2,19 @@ package com.company.homework16;
 
 import java.io.*;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class FileLogger {
-    public static void main(String[] args) throws Exception {
 
-    }
-
-    private File test;
-    private BufferedWriter writer;
-    private BufferedReader reader;
-    private FileLoggerConfiguration configur;
+    private final FileLoggerConfiguration configuration;
+    private final FileLoggerWriter loggerWriter;
 
     /**
      * 1. Создать класс FileLogger. Класс будет осуществлять логирование (протоколирование) информации в указанный файл
      * на основании конфигурационного объекта.
-     *
-     * @param configur
      */
-    public FileLogger(FileLoggerConfiguration configur) {
-        this.configur = configur;
-        try {
-            test = new File(".\test.txt");
-            writer = new BufferedWriter(new FileWriter(test, true));
-            reader = new BufferedReader(new InputStreamReader(System.in));
-        } catch (IOException e) {
-            throw new RuntimeException("Something wrong with writer!", e);
-        }
+    public FileLogger(FileLoggerConfiguration configuration) {
+        this.configuration = configuration;
+        loggerWriter = new FileLoggerWriter(configuration);
     }
 
 
@@ -41,40 +27,24 @@ public class FileLogger {
      * выбросить исключение FileMaxSizeReachedException с сообщением информации максимального и текущего размера файла, пути к файлу.
      */
     private void debug(String information) throws IOException {
-        if (configur.getLevel() == LoggingLevel.DEBUG) {
-            fileMaxSizeReachedException();
-            writer = new BufferedWriter(writer);
-        }
-        writer.write(String.format(configur.getWriteFormatLevel(),
-                LocalDateTime.now(),
-                configur.getLevel(),
-                information)
-        );
-        writer.newLine();
-        writer.flush();
+        File file = configuration.getFile().toFile();
+        FileLoggerValidator.checkMaxSizeFile(file.length() + information.length(),
+                configuration.getMaxSizeofFile(),
+                configuration.getFile());
+
+        loggerWriter.write(file, information);
+
 
     }
 
-    private void inform(String information) throws IOException {
-        if (configur.getLevel() == LoggingLevel.DEBUG) {
-            return;
-        }
-        fileMaxSizeReachedException();
-        writer = new BufferedWriter(writer);
+    private void info(String information) throws IOException {
+        File file = configuration.getFile().toFile();
+        FileLoggerValidator.checkMaxSizeFile(file.length() + information.length(),
+                configuration.getMaxSizeofFile(),
+                configuration.getFile());
 
-        writer.write(String.format(configur.getWriteFormatLevel(),
-                LocalDateTime.now(),
-                configur.getLevel(),
-                information)
-        );
-        writer.newLine();
-        writer.flush();
-    }
+        loggerWriter.write(file, information);
 
-    private void fileMaxSizeReachedException() throws IOException {
-        if (test.getFile().length() > test.getMaxSizeofFile()) {
-            System.out.println("Size of file is big!" + test.getFile().length + test.getMaxSizeofFile);
-        }
     }
 
 
