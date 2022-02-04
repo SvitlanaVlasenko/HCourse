@@ -10,7 +10,7 @@ import static com.company.homework23.CurrencyConfiguration.*;
 import static java.lang.System.*;
 
 public class Main {
-    public static void main(String[] args, String currency) throws IOException {
+    public static void main(String[] args) throws IOException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         Scanner sc = new Scanner(in);
         out.println("Enter currency code:");
@@ -20,7 +20,7 @@ public class Main {
         out.println("Enter end date in range between 14.01.2022 to 17.01.2022:");
         LocalDate enddate = LocalDate.parse(sc.nextLine(), formatter);
         do {
-            if ((curentcurrency != currency) && enddate.compareTo(startdate) > 0 ){
+            if ((curentcurrency.contains(CurrencyName)) && enddate.compareTo(startdate) > 0 ){
                 throw new CheckCurrencyNameException("Please enter currency again UAH or AUD");
             } else
                 getFileInfo();
