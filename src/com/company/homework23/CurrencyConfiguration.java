@@ -5,13 +5,19 @@ import java.time.LocalDate;
 
 public class CurrencyConfiguration {
     static Path path = Path.of("C:\\HCourse\\src\\com\\company\\homework23\\data");
-    private final CurrencyName currencyname;
+    final CurrencyType currencynamesource;
+    final CurrencyType currencynametarget;
     private final LocalDate startdate;
     private final LocalDate enddate;
     private final String line;
 
-    public CurrencyConfiguration(CurrencyName currencyname, LocalDate startdate, LocalDate enddate, String line) {
-        this.currencyname = currencyname;
+    public CurrencyConfiguration(CurrencyType currencynamesource,
+                                 CurrencyType currencynametarget,
+                                 LocalDate startdate,
+                                 LocalDate enddate,
+                                 String line) {
+        this.currencynamesource = currencynamesource;
+        this.currencynametarget = currencynametarget;
         this.startdate = startdate;
         this.enddate = enddate;
         this.line = line;
@@ -21,8 +27,12 @@ public class CurrencyConfiguration {
         return path;
     }
 
-    public CurrencyName getCurrencyname() {
-        return currencyname;
+    public CurrencyType getCurrencynamesource() {
+        return currencynamesource;
+    }
+
+    public CurrencyType getCurrencynametarget() {
+        return currencynametarget;
     }
 
     public LocalDate getStartdate() {
@@ -35,5 +45,16 @@ public class CurrencyConfiguration {
 
     public String getLine() {
         return line;
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "CurrencyConfiguration{" +
+                "currencynamesource=" + currencynamesource +
+                ", currencynametarget=" + currencynametarget +
+                ", startdate=" + startdate +
+                ", enddate=" + enddate +
+                ", line='" + line + '\'' +
+                '}';
     }
 }
