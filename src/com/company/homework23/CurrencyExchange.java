@@ -10,7 +10,7 @@ import java.util.concurrent.Semaphore;
 
 import static java.lang.System.*;
 
-public class Main {
+public class CurrencyExchange {
     public static void main(String[] args) {
         List<com.company.homework23.CurrencyConfiguration> configurationList = new ArrayList<>(
                 List.of(
@@ -49,11 +49,12 @@ public class Main {
         }while (true) ;
     }
 
-    static Runnable getRate() {
+    static Runnable getRate(List<com.company.homework23.CurrencyConfiguration> configurationList,String CurrencyType,LocalDate startdate,LocalDate enddate) {
         return new Runnable() {
             @Override
             public void run() {
-                getFileInfo(configurationList);
+
+                getFileInfo(configurationList, CurrencyType, startdate, enddate);
             }
         };
     }
@@ -90,5 +91,6 @@ public class Main {
     }
 
 }
+
 
 
