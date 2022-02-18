@@ -1,21 +1,18 @@
-package com.company.homework23;
+import com.company.homework23.CurrencyName;
 
 import java.nio.file.Path;
 import java.time.LocalDate;
 
 public class CurrencyConfiguration {
     static Path path = Path.of("C:\\HCourse\\src\\com\\company\\homework23\\data");
-    final CurrencyType currencynamesource;
-    final CurrencyType currencynametarget;
-    private final LocalDate startdate;
-    private final LocalDate enddate;
-    private final String line;
+    static CurrencyName currencynamesource;
+    static CurrencyName currencynametarget;
+    static LocalDate startdate;
+    static LocalDate enddate;
+    static String line;
 
-    public CurrencyConfiguration(CurrencyType currencynamesource,
-                                 CurrencyType currencynametarget,
-                                 LocalDate startdate,
-                                 LocalDate enddate,
-                                 String line) {
+
+    public CurrencyConfiguration(CurrencyName currencynamesource, CurrencyName currencynametarget, LocalDate startdate, LocalDate enddate, String line) {
         this.currencynamesource = currencynamesource;
         this.currencynametarget = currencynametarget;
         this.startdate = startdate;
@@ -23,15 +20,19 @@ public class CurrencyConfiguration {
         this.line = line;
     }
 
+    public CurrencyConfiguration(com.company.homework23.CurrencyName uah, com.company.homework23.CurrencyName aud) {
+    }
+
+
     public static Path getPath() {
         return path;
     }
 
-    public CurrencyType getCurrencynamesource() {
-        return currencynamesource;
+    public static CurrencyName getCurrencynamesource() {
+        return CurrencyConfiguration.currencynamesource;
     }
 
-    public CurrencyType getCurrencynametarget() {
+    public CurrencyName getCurrencynametarget() {
         return currencynametarget;
     }
 
@@ -47,8 +48,8 @@ public class CurrencyConfiguration {
         return line;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "CurrencyConfiguration{" +
                 "currencynamesource=" + currencynamesource +
                 ", currencynametarget=" + currencynametarget +
