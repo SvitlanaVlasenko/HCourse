@@ -52,7 +52,7 @@ public class CurrencyExchange {
         } while (true);
     }
 
-    static Runnable getRate(List<CurrencyConfiguration> configurationList,String currencynamesource, LocalDate startdate, LocalDate enddate, String line, Path path) {
+    static Runnable getRate(List<CurrencyConfiguration> configurationList, String currencynamesource, LocalDate startdate, LocalDate enddate, String line, Path path) {
         return new Runnable() {
             @Override
             public void run() {
@@ -61,6 +61,7 @@ public class CurrencyExchange {
             }
         };
     }
+
     public static double countMiddle(List<Double> rateDate) {
         double result = 0;
 
@@ -71,7 +72,7 @@ public class CurrencyExchange {
         return result / rateDate.size();
     }
 
-    private static void getFileInfo(List<CurrencyConfiguration> configurationList, String currencynamesource, LocalDate startdate, LocalDate enddate, String line, Path path) {
+    private static double getFileInfo(List<CurrencyConfiguration> configurationList, String currencynamesource, LocalDate startdate, LocalDate enddate, String line, Path path) {
         String allNames = null;
         List<Double> rateDate = new ArrayList<>();
         List<String> inform = new ArrayList<>();
@@ -109,8 +110,9 @@ public class CurrencyExchange {
             startdate = startdate.plusDays(1);
         }
         String allName = valueOf("[|]".split(inform.get(Integer.parseInt(currencynamesource))));
+        return countMiddle(rateDate);
 
-        System.out.println("UAH [UAH] to %s [%s] -> %f", currencynamesource, allName, valueOf(countMiddle(rateDate)));
+        //System.out.println("UAH [UAH] to %s [%s] %f", currencynamesource, allName, valueOf(countMiddle(rateDate)));
     }
 
 }
