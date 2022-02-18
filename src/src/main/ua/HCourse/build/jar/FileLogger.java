@@ -1,4 +1,4 @@
-
+package ua.HCourse.build.jar;
 import java.io.*;
 import java.nio.file.Path;
 import java.time.LocalDateTime;

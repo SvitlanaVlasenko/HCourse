@@ -1,11 +1,13 @@
+package ua.HCourse.build.jar;
+
 import java.nio.file.Path;
 
 public final class FileLoggerValidator {
 
-    private FileLoggerValidator() {
+    public FileLoggerValidator() {
     }
 
-    public static void checkMaxSizeFile(long current, long max, Path file){
+        public static void checkMaxSizeFile(long current, long max, Path file){
         if (current > max) {
             throw new FileMaxSizeReachedException(
                     String.format(

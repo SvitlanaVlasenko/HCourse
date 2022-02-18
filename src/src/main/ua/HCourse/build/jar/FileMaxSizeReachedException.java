@@ -1,3 +1,4 @@
+package ua.HCourse.build.jar;
 public class FileMaxSizeReachedException extends RuntimeException {
     public FileMaxSizeReachedException(String information) {
         super(information);

@@ -1,3 +1,5 @@
+package ua.HCourse.build.jar;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;

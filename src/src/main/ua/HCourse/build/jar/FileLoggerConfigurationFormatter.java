@@ -1,3 +1,4 @@
+package ua.HCourse.build.jar;
 import java.util.Date;
 
 public class FileLoggerConfigurationFormatter {

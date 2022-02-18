@@ -1,3 +1,4 @@
+package ua.HCourse.build.jar;
 /**
  * 2. Создать перечисление LoggingLevel. Состоит из значений: INFO, DEBUG.
  * Таблица видимости:
