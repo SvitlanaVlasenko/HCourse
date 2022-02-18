@@ -1,5 +1,3 @@
-package com.company.homework23;
-
 
 import java.io.*;
 import java.time.LocalDate;
@@ -27,14 +25,14 @@ public class Main {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
     Scanner sc = new Scanner(in);
     System.out.println("Enter currency code:");
-    String curentcurrency = sc.nextLine();
+    String currencynamesource = sc.nextLine();
     System.out.println("Enter start date in range between 13.01.2022 to 16.01.2022:");
     LocalDate startdate = LocalDate.parse(sc.nextLine(), formatter);
     System.out.println("Enter end date in range between 14.01.2022 to 17.01.2022:");
     LocalDate enddate = LocalDate.parse(sc.nextLine(), formatter);
 
     do{
-        if ((curentcurrency.contains(CurrencyType)) && enddate.compareTo(startdate) > 0) {
+        if ((currencynamesource.contains(CurrencyType)) && enddate.compareTo(startdate) > 0) {
             Semaphore semaphore = new Semaphore(2);
             try {
                 semaphore.acquire();
